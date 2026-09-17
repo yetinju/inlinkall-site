@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="凌茂电子 EMC 系统集成解决方案，包括 PCB 电子板级抗扰度测试与电磁现场骚扰采集、分析及回放。" />
+    <title>EMC 系统集成解决方案｜LinkAll 凌茂电子</title>
+    <style>
+      :root { --ink:#071a2f; --navy:#0a2947; --blue:#1268b3; --cyan:#36c3e6; --red:#e72f36; --pale:#eef4f7; --line:#d9e4ea; --muted:#617d92; --white:#fff; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:#f8fafb; font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+      a { color:inherit; text-decoration:none; }
+      .wrap { width:min(1180px,calc(100% - 48px)); margin:auto; }
+      .topline { min-height:34px; color:#bdd0dc; background:var(--ink); font-size:12px; }
+      .topline .wrap { min-height:34px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
+      .topline strong { color:#fff; font-weight:600; }
+      .topline-tel { color:#fff; text-decoration:none; }
+      .topline-tel:hover { text-decoration:underline; }
+      header { position:sticky; top:0; z-index:5; border-bottom:1px solid rgba(215,226,233,.9); background:rgba(250,252,253,.94); backdrop-filter:blur(14px); }
+      .nav { min-height:82px; display:flex; align-items:center; justify-content:space-between; gap:25px; }
+      .brand { display:flex; width:162px; flex:0 0 auto; align-items:center; }
+      .brand img { display:block; height:52px; width:auto; max-width:190px; object-fit:contain; }
+      .nav-links { display:flex; align-items:center; gap:clamp(16px,2.4vw,35px); color:#19384f; font-size:14px; font-weight:700; }
+      .nav-links a { position:relative; padding:8px 0; }
+      .nav-links a.active::after { position:absolute; right:0; bottom:0; left:0; height:2px; content:""; background:var(--red); }
+      .cta { display:inline-flex; min-height:46px; align-items:center; justify-content:center; gap:12px; padding:0 20px; color:#fff; border:1px solid var(--blue); background:var(--blue); font-size:14px; font-weight:700; transition:.2s ease; }
+      .cta:hover { background:#095492; transform:translateY(-1px); }
+      .eyebrow { display:inline-flex; align-items:center; gap:9px; color:var(--cyan); font:700 11px/1 Arial,sans-serif; letter-spacing:.16em; }
+      .eyebrow::before { width:27px; height:1px; content:""; background:currentColor; }
+      .hero { position:relative; overflow:hidden; color:#fff; background:var(--ink); }
+      .hero::before { position:absolute; inset:0; content:""; background-image:linear-gradient(rgba(95,194,220,.1) 1px,transparent 1px),linear-gradient(90deg,rgba(95,194,220,.1) 1px,transparent 1px); background-size:72px 72px; mask-image:linear-gradient(90deg,#000 0%,#000 56%,transparent 96%); }
+      .hero::after { position:absolute; top:-280px; right:-105px; width:680px; height:680px; content:""; border:1px solid rgba(61,203,236,.36); border-radius:50%; box-shadow:0 0 0 72px rgba(61,203,236,.04),0 0 0 144px rgba(61,203,236,.025); }
+      .hero .wrap { position:relative; z-index:1; min-height:448px; display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:48px; padding:72px 0; }
+      .crumb { color:#91afc2; font-size:12px; }
+      .hero .eyebrow { margin-top:31px; color:#76dced; }
+      h1 { max-width:680px; margin:15px 0 17px; font-size:clamp(42px,5.3vw,69px); line-height:1.04; letter-spacing:-.073em; }
+      .hero p { max-width:590px; margin:0; color:#bdd1df; font-size:16px; line-height:1.85; }
+      .hero-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+      .hero-tags span { padding:8px 11px; color:#bdeaf3; border:1px solid rgba(113,217,238,.35); background:rgba(12,51,76,.5); font:700 10px/1 Arial,sans-serif; letter-spacing:.08em; }
+      .signal-map { position:relative; min-height:278px; border:1px solid rgba(119,218,239,.28); background:linear-gradient(135deg,rgba(27,84,119,.65),rgba(11,42,65,.38)); box-shadow:inset 0 0 85px rgba(35,171,203,.08); }
+      .signal-map::before { position:absolute; inset:25px; content:""; border:1px solid rgba(106,215,237,.2); background:repeating-linear-gradient(90deg,transparent 0 39px,rgba(120,220,241,.13) 40px 41px),repeating-linear-gradient(0deg,transparent 0 39px,rgba(120,220,241,.13) 40px 41px); }
+      .signal-map::after { position:absolute; top:50%; right:-20px; left:-20px; height:2px; content:""; background:linear-gradient(90deg,transparent,#69d6ec 10%,#69d6ec 90%,transparent); box-shadow:0 0 19px #38c9e6; transform:rotate(-14deg); }
+      .map-node { position:absolute; z-index:2; padding:12px 13px; color:#c5eff7; border:1px solid rgba(126,221,241,.45); background:rgba(7,30,48,.83); box-shadow:0 9px 25px rgba(0,0,0,.18); font:700 11px/1.35 Arial,sans-serif; letter-spacing:.08em; }
+      .map-node small { display:block; margin-top:5px; color:#87afc1; font-size:10px; letter-spacing:0; }
+      .map-node.one { top:38px; left:16px; }
+      .map-node.two { top:98px; right:16px; }
+      .map-node.three { bottom:35px; left:51px; }
+      .quick-nav { border-bottom:1px solid var(--line); background:#fff; }
+      .quick-nav .wrap { min-height:75px; display:flex; align-items:center; gap:30px; overflow:auto; }
+      .quick-nav b { flex:0 0 auto; color:#527289; font:700 11px/1 Arial,sans-serif; letter-spacing:.13em; }
+      .quick-nav a { flex:0 0 auto; color:#31546a; font-size:13px; font-weight:700; }
+      .quick-nav a:hover { color:var(--blue); }
+      section { padding:100px 0; }
+      .section-head { display:flex; align-items:end; justify-content:space-between; gap:32px; margin-bottom:38px; }
+      .section-head h2 { max-width:690px; margin:13px 0 0; font-size:clamp(31px,4vw,48px); line-height:1.16; letter-spacing:-.06em; }
+      .section-head p { max-width:345px; margin:0; color:var(--muted); font-size:14px; line-height:1.8; }
+      .solution { background:#fff; }
+      .solution.alt { background:var(--pale); }
+      .solution-layout { display:grid; grid-template-columns:1.02fr 1.48fr; gap:28px; }
+      .solution-intro { display:flex; min-height:337px; flex-direction:column; justify-content:space-between; padding:29px; color:#e8f9fc; background:linear-gradient(145deg,#155d8d,#0a3555 64%,#092842); }
+      .solution-intro h3 { margin:25px 0 13px; color:#fff; font-size:31px; line-height:1.18; letter-spacing:-.06em; }
+      .solution-intro p { margin:0; color:#bcd8e4; font-size:14px; line-height:1.8; }
+      .scope-tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:24px; }
+      .scope-tags span { padding:8px 10px; color:#bce9f3; border:1px solid rgba(123,223,241,.33); font:700 10px/1 Arial,sans-serif; letter-spacing:.07em; }
+      .process { display:grid; grid-template-columns:repeat(2,1fr); gap:1px; border:1px solid #cbdde5; background:#cbdde5; }
+      .process-step { min-height:168px; padding:23px; background:#f9fcfd; }
+      .process-step b { display:block; color:#1a70b5; font:700 11px/1 Arial,sans-serif; letter-spacing:.14em; }
+      .process-step h4 { margin:27px 0 9px; font-size:19px; letter-spacing:-.04em; }
+      .process-step p { margin:0; color:var(--muted); font-size:12px; line-height:1.7; }
+      .modules { display:grid; grid-template-columns:repeat(4,1fr); gap:13px; margin-top:28px; }
+      .module { min-height:160px; padding:19px; border:1px solid var(--line); background:#fff; }
+      .module b { display:block; color:var(--red); font:700 10px/1 Arial,sans-serif; letter-spacing:.13em; }
+      .module h4 { margin:19px 0 9px; font-size:17px; line-height:1.25; letter-spacing:-.04em; }
+      .module p { margin:0; color:var(--muted); font-size:12px; line-height:1.65; }
+      .capability-grid { display:grid; grid-template-columns:1.06fr .94fr; gap:28px; }
+      .capability-list { border-top:1px solid #c8d8e1; }
+      .capability-item { display:grid; grid-template-columns:51px 1fr; gap:15px; min-height:86px; align-items:center; border-bottom:1px solid #c8d8e1; }
+      .capability-item b { color:#7c98aa; font:700 11px/1 Arial,sans-serif; }
+      .capability-item h4 { margin:0 0 5px; font-size:17px; letter-spacing:-.035em; }
+      .capability-item p { margin:0; color:var(--muted); font-size:12px; line-height:1.65; }
+      .data-flow { position:relative; overflow:hidden; min-height:380px; padding:31px; color:#d9f4f9; background:#0d3856; }
+      .data-flow::before { position:absolute; top:-110px; right:-88px; width:300px; height:300px; content:""; border:1px solid rgba(104,219,238,.5); border-radius:50%; box-shadow:0 0 0 42px rgba(104,219,238,.05),0 0 0 84px rgba(104,219,238,.04); }
+      .data-flow > * { position:relative; z-index:1; }
+      .data-flow h3 { max-width:350px; margin:20px 0 35px; color:#fff; font-size:27px; line-height:1.22; letter-spacing:-.055em; }
+      .flow-line { position:relative; display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+      .flow-line::before { position:absolute; top:18px; right:8%; left:8%; height:1px; content:""; background:#5ecce5; }
+      .flow-node { position:relative; padding-top:43px; color:#a8cdd9; font-size:11px; line-height:1.45; }
+      .flow-node::before { position:absolute; top:12px; left:0; width:13px; height:13px; content:""; border:3px solid #36c3e6; border-radius:50%; background:#0d3856; box-shadow:0 0 13px rgba(54,195,230,.6); }
+      .flow-node b { display:block; margin-bottom:5px; color:#fff; font-size:12px; }
+      .case-study { background:#fff; }
+      .case-layout { display:grid; grid-template-columns:.82fr 1.18fr; gap:34px; align-items:stretch; }
+      .case-copy-panel { display:flex; min-height:440px; flex-direction:column; justify-content:space-between; padding:31px; color:#fff; background:linear-gradient(145deg,#165e8e,#0a3454 66%,#08253e); }
+      .case-copy-panel h3 { margin:22px 0 14px; font-size:32px; line-height:1.18; letter-spacing:-.06em; }
+      .case-copy-panel > div > p { margin:0; color:#bed7e3; font-size:14px; line-height:1.8; }
+      .case-facts { margin:32px 0 0; padding:0; list-style:none; border-top:1px solid rgba(187,225,235,.34); }
+      .case-facts li { display:grid; grid-template-columns:68px 1fr; gap:13px; padding:14px 0; color:#c3d9e3; border-bottom:1px solid rgba(187,225,235,.2); font-size:12px; line-height:1.6; }
+      .case-facts b { color:#76d9ed; font:700 10px/1.6 Arial,sans-serif; letter-spacing:.1em; }
+      .case-gallery { display:grid; grid-template-rows:1.05fr .95fr; gap:13px; }
+      .case-image { position:relative; min-height:210px; overflow:hidden; background:#dbe7ec; }
+      .case-image img { width:100%; height:100%; display:block; object-fit:cover; }
+      .case-image.waveform img { object-position:center; }
+      .case-image span { position:absolute; right:13px; bottom:13px; padding:7px 9px; color:#fff; background:rgba(5,25,41,.78); font-size:10px; font-weight:700; }
+      .industry { padding:94px 0; color:#fff; background:#0a2947; }
+      .industry .section-head p { color:#aac6d5; }
+      .industry-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(175,216,231,.22); }
+      .industry-card { min-height:180px; padding:25px; background:#103852; }
+      .industry-card b { color:#76d9ed; font:700 11px/1 Arial,sans-serif; letter-spacing:.14em; }
+      .industry-card h3 { margin:29px 0 9px; font-size:22px; letter-spacing:-.045em; }
+      .industry-card p { margin:0; color:#abc5d2; font-size:12px; line-height:1.7; }
+      .delivery { background:#fff; }
+      .delivery-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+      .delivery-card { padding:2px 0 8px; }
+      .delivery-card b { display:block; margin-bottom:16px; color:var(--red); font:700 12px/1 Arial,sans-serif; letter-spacing:.12em; }
+      .delivery-card h3 { margin:0 0 10px; font-size:20px; letter-spacing:-.04em; }
+      .delivery-card p { margin:0; color:var(--muted); font-size:13px; line-height:1.75; }
+      .notice { margin-top:38px; padding:17px 20px; color:#587587; border-left:3px solid var(--cyan); background:#f0f7fa; font-size:12px; line-height:1.75; }
+      .contact { position:relative; overflow:hidden; padding:82px 0; color:#fff; background:var(--ink); }
+      .contact::after { position:absolute; top:-105px; right:10%; width:345px; height:345px; content:""; border:1px solid rgba(75,205,235,.34); border-radius:50%; box-shadow:0 0 0 56px rgba(75,205,235,.045); }
+      .contact .wrap { position:relative; z-index:1; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+      .contact h2 { max-width:690px; margin:15px 0 0; font-size:clamp(30px,4vw,49px); line-height:1.16; letter-spacing:-.06em; }
+      .contact .cta { flex:0 0 auto; min-width:166px; border-color:var(--red); background:var(--red); }
+      .contact .cta:hover { background:#c5232b; }
+      footer { padding:46px 0 23px; color:#a3b8c7; background:#061526; }
+      .footer-top { display:grid; grid-template-columns:1.75fr repeat(3,1fr); gap:25px; padding-bottom:41px; }
+      .footer-logo { display:inline-flex; align-items:center; padding:11px 15px; background:#fff; border-radius:12px; }
+      .footer-logo img { display:block; height:40px; width:auto; max-width:160px; object-fit:contain; }
+      .footer-brand p { max-width:240px; margin:16px 0 0; font-size:12px; line-height:1.7; }
+      .footer-group b { display:block; margin-bottom:14px; color:#fff; font-size:13px; }
+      .footer-group a { display:block; margin:8px 0; font-size:12px; }
+      .footer-bottom { display:flex; justify-content:space-between; gap:18px; padding-top:20px; border-top:1px solid rgba(169,199,216,.15); font-size:11px; }
+      .consult { position:fixed; right:0; bottom:0; z-index:60; width:196px; font-family:inherit; }
+      .consult-head { display:flex; align-items:center; justify-content:center; gap:8px; height:46px; color:#fff; background:var(--blue); font-size:15px; font-weight:700; cursor:pointer; user-select:none; box-shadow:0 6px 20px rgba(8,31,52,.2); }
+      .consult-head svg { width:19px; height:19px; flex:0 0 auto; }
+      .consult-caret { font-size:11px; transition:transform .2s ease; }
+      .consult.collapsed .consult-caret { transform:rotate(180deg); }
+      .consult-body { background:#fff; border:1px solid #cfe0ea; border-top:0; box-shadow:-8px 12px 28px rgba(8,31,52,.14); }
+      .consult.collapsed .consult-body { display:none; }
+      .consult-item { display:block; padding:12px 14px; color:#17364d; text-align:center; font-size:13px; border-top:1px solid #e7eff4; transition:background .18s ease,color .18s ease; }
+      .consult-item:first-child { border-top:0; }
+      .consult-item:hover { color:#fff; background:var(--blue); }
+      @media (max-width:680px) { .consult { width:158px; } .consult-head { height:42px; font-size:13px; } .consult-item { padding:11px 12px; font-size:12px; } }
+      @media (max-width:920px) { .nav-links { display:none; } .hero .wrap,.solution-layout,.capability-grid,.case-layout { grid-template-columns:1fr; } .signal-map { min-height:240px; } .modules { grid-template-columns:repeat(2,1fr); } .delivery-grid { grid-template-columns:repeat(2,1fr); row-gap:34px; } .footer-top { grid-template-columns:1fr 1fr; } .footer-brand { grid-column:span 2; } }
+      @media (max-width:620px) { .wrap { width:min(100% - 32px,1180px); } .topline .side { display:none; } .nav { min-height:66px; } .brand { width:132px; } .brand img { height:40px; } .nav .cta { min-height:38px; padding:0 13px; font-size:12px; } .hero .wrap { min-height:auto; padding:50px 0; } h1 { font-size:43px; } .hero p { font-size:14px; } .signal-map { min-height:212px; } .quick-nav .wrap { min-height:64px; gap:18px; } section { padding:68px 0; } .section-head { display:block; } .section-head p { margin-top:17px; } .process,.modules,.industry-grid,.delivery-grid { grid-template-columns:1fr; } .process-step { min-height:138px; } .industry { padding:67px 0; } .contact .wrap { align-items:flex-start; flex-direction:column; } .footer-top { grid-template-columns:1fr; } .footer-brand { grid-column:auto; } .footer-bottom { display:block; line-height:1.8; } }
+    </style>
+  </head>
+  <body>
+    <div id="app"><div class="wrap" style="padding:120px 0;color:#658097">正在从 Directus 加载内容…</div></div>
+
+    <script>
+      const API = "https://directus-production-18ce.up.railway.app";
+      const q = (c, f = "*", sort) =>
+        `${API}/items/${c}?fields=${encodeURIComponent(f)}` + (sort ? `&sort=${sort}` : "");
+      const esc = (s) => (s == null ? "" : String(s)
+        .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"));
+      const br = (s) => esc(s).replace(/\n/g, "<br />");
+      const asset = (id) => id ? `${API}/assets/${id}` : null;
+      const phoneTel = (site) => {
+        const first = String((site && site.contact_phone_display) || "").split("/")[0];
+        const digits = first.replace(/[^\d+]/g, "");
+        return "tel:" + digits;
+      };
+      const splitList = (s) => (s == null ? [] : String(s).split(",").map(x => x.trim()).filter(Boolean));
+
+      async function get(c, f, sort) {
+        const r = await fetch(q(c, f, sort));
+        if (!r.ok) throw new Error(`${c} ${r.status}`);
+        const d = await r.json();
+        return d.data;
+      }
+
+      function chrome(site, nav, toplineTagline, groups) {
+        const cur = location.pathname.split("/").pop() || "index.html";
+        const isHome = (cur === "homepage-render.html" || cur === "index.html");
+        const baseOf = (href) => String(href).split("#")[0].split("/").pop();
+        const navHtml = nav.map(a => {
+          const b = baseOf(a.href);
+          const active = b && !String(a.href).includes("#") && (b === cur || (b === "homepage-render.html" && isHome));
+          return `<a href="${esc(a.href)}" class="${active ? "active" : ""}">${esc(a.label)}</a>`;
+        }).join("");
+        const logoImg = site.logo ? `<img src="${asset(site.logo)}" alt="${esc(site.company_name)}" />` : `<b style="font-size:22px;color:var(--blue)">LinkAll</b>`;
+        const telHref = `${phoneTel(site)}`;
+        const topline = `<div class="topline"><div class="wrap"><span>${esc(site.company_name)} <strong>${esc(toplineTagline)}</strong></span><span class="side">咨询电话：<a class="topline-tel" href="${telHref}">${esc(site.contact_phone_display)}</a></span></div></div>`;
+        const header = `<header><nav class="nav wrap" aria-label="主导航"><a class="brand" href="homepage-render.html" aria-label="${esc(site.company_name)}首页">${logoImg}</a><div class="nav-links">${navHtml}</div><a class="cta" href="${telHref}">${esc(site.contact_phone_display ? "致电技术咨询" : "联系我们")} <span>↗</span></a></nav></header>`;
+        const footerGroupsHtml = (groups || []).map(g =>
+          `<div class="footer-group"><b>${esc(g.title)}</b>${(g.links || []).map(l =>
+            `<a href="${esc(l.href)}">${esc(l.label)}</a>`).join("")}</div>`).join("");
+        const footer = `<footer id="about"><div class="wrap"><div class="footer-top"><div class="footer-brand"><span class="footer-logo">${logoImg}</span><p>${br(site.footer_brand_text)}</p></div>${footerGroupsHtml}</div><div class="footer-bottom"><span>${esc(site.footer_copyright)}</span><span>${esc(site.footer_address)}</span></div></div></footer>`;
+        return { topline, header, footer };
+      }
+
+      // 在线咨询浮动组件
+      function consultWidget(site) {
+        const tel = phoneTel(site);
+        const items = ["销售咨询", "售后咨询", "技术咨询"];
+        const head = '<div class="consult-head" role="button" tabindex="0" aria-expanded="true">'
+          + '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.8 14v-2a7.2 7.2 0 0 1 14.4 0v2"/><rect x="3" y="13" width="3.6" height="6.4" rx="1.6"/><rect x="17.4" y="13" width="3.6" height="6.4" rx="1.6"/><path d="M19 19.4a3.4 3.4 0 0 1-3.4 2.6h-2.2"/></svg>'
+          + '<span>在线咨询</span><span class="consult-caret">▾</span></div>';
+        const body = '<div class="consult-body">'
+          + items.map(t => '<a class="consult-item" href="' + tel + '">' + t + '</a>').join("")
+          + '</div>';
+        return '<aside class="consult" id="consult">' + head + body + '</aside>';
+      }
+      function bindConsult() {
+        const box = document.getElementById("consult");
+        if (!box) return;
+        const head = box.querySelector(".consult-head");
+        const toggle = () => {
+          const collapsed = box.classList.toggle("collapsed");
+          head.setAttribute("aria-expanded", String(!collapsed));
+        };
+        head.addEventListener("click", toggle);
+        head.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); } });
+      }
+
+      async function main() {
+        const [site, nav, groups, sp, quick, sections, cas, facts, industry, delivery] = await Promise.all([
+          get("public_settings"), get("public_nav", "*", "sort"),
+          get("public_footer_groups", "id,title,sort,links.*", "sort"), get("solution_page"),
+          get("solution_quicknav", "*", "sort"),
+          get("solution_sections", "*,details.*", "sort"),
+          get("solution_case"), get("solution_case_fact", "*", "sort"),
+          get("solution_industry", "*", "sort"), get("solution_delivery", "*", "sort"),
+        ]);
+
+        document.title = site.site_title || "LinkAll 凌茂电子";
+        const _m = document.querySelector('meta[name="description"]');
+        if (_m) _m.setAttribute("content", site.meta_description || "");
+
+        const { topline, header, footer } = chrome(site, nav, sp.topline_tagline, groups);
+
+        const heroTags = splitList(sp.hero_tags).map(t => `<span>${esc(t)}</span>`).join("");
+        const quickHtml = quick.map(a => `<a href="${esc(a.href)}">${esc(a.label)}</a>`).join("");
+
+        const byGroup = (sec, g) => (sec.details || []).filter(d => d.group === g).sort((a, b) => a.sort - b.sort);
+
+        const sectionHtml = sections.map(sec => {
+          if (sec.layout === "pcb") {
+            const intro = `<article class="solution-intro"><div><span class="eyebrow">${esc(sec.intro_eyebrow)}</span><h3>${esc(sec.intro_title)}</h3><p>${esc(sec.intro_desc)}</p></div><div class="scope-tags">${splitList(sec.scope_tags).map(t => `<span>${esc(t)}</span>`).join("")}</div></article>`;
+            const process = `<div class="process">${byGroup(sec, "process").map(d => `<article class="process-step"><b>${esc(d.index_label)}</b><h4>${esc(d.title)}</h4><p>${esc(d.desc)}</p></article>`).join("")}</div>`;
+            const modules = `<div class="modules">${byGroup(sec, "module").map(d => `<article class="module"><b>${esc(d.index_label)}</b><h4>${esc(d.title)}</h4><p>${esc(d.desc)}</p></article>`).join("")}</div>`;
+            return `<section class="solution" id="pcb-system"><div class="wrap"><div class="section-head"><div><span class="eyebrow">${esc(sec.eyebrow)}</span><h2>${esc(sec.title)}</h2></div><p>${esc(sec.subtitle)}</p></div><div class="solution-layout">${intro}${process}</div>${modules}</div></section>`;
+          } else {
+            const caps = `<div class="capability-list">${byGroup(sec, "capability").map(d => `<article class="capability-item"><b>${esc(d.index_label)}</b><div><h4>${esc(d.title)}</h4><p>${esc(d.desc)}</p></div></article>`).join("")}</div>`;
+            const flow = `<aside class="data-flow"><span class="eyebrow">${esc(sec.dataflow_eyebrow)}</span><h3>${esc(sec.dataflow_title)}</h3><div class="flow-line">${byGroup(sec, "flow").map(d => `<div class="flow-node"><b>${esc(d.index_label)}</b>${esc(d.title)}</div>`).join("")}</div></aside>`;
+            return `<section class="solution alt" id="field-system"><div class="wrap"><div class="section-head"><div><span class="eyebrow">${esc(sec.eyebrow)}</span><h2>${esc(sec.title)}</h2></div><p>${esc(sec.subtitle)}</p></div><div class="capability-grid">${caps}${flow}</div></div></section>`;
+          }
+        }).join("");
+
+        const caseImg = (id, caption, cls) => {
+          const img = id ? `<img src="${asset(id)}" alt="${esc(caption)}" />` : "";
+          return `<figure class="case-image ${cls || ""}">${img}<span>${esc(caption)}</span></figure>`;
+        };
+        const caseHtml = `<section class="case-study" id="case-gis"><div class="wrap"><div class="section-head"><div><span class="eyebrow">${esc(cas.eyebrow)}</span><h2>${esc(cas.title)}</h2></div><p>${esc(cas.subtitle)}</p></div><div class="case-layout"><article class="case-copy-panel"><div><span class="eyebrow">${esc(cas.copy_eyebrow)}</span><h3>${esc(cas.copy_title)}</h3><p>${esc(cas.copy_desc)}</p><ul class="case-facts">${facts.map(f => `<li><b>${esc(f.label)}</b><span>${esc(f.desc)}</span></li>`).join("")}</ul></div></article><div class="case-gallery">${caseImg(cas.image1, cas.image1_caption)}${caseImg(cas.image2, cas.image2_caption, "waveform")}</div></div></div></section>`;
+
+        const industryHtml = `<section class="industry"><div class="wrap"><div class="section-head"><div><span class="eyebrow">${esc(sp.industry_eyebrow)}</span><h2>${esc(sp.industry_title)}</h2></div><p>${esc(sp.industry_subtitle)}</p></div><div class="industry-grid">${industry.map(i => `<article class="industry-card"><b>${esc(i.index_label)}</b><h3>${esc(i.title)}</h3><p>${esc(i.desc)}</p></article>`).join("")}</div></div></section>`;
+
+        const deliveryHtml = `<section class="delivery" id="delivery"><div class="wrap"><div class="section-head"><div><span class="eyebrow">${esc(sp.delivery_eyebrow)}</span><h2>${esc(sp.delivery_title)}</h2></div><p>${esc(sp.delivery_subtitle)}</p></div><div class="delivery-grid">${delivery.map(d => `<article class="delivery-card"><b>${esc(d.index_label)}</b><h3>${esc(d.title)}</h3><p>${esc(d.desc)}</p></article>`).join("")}</div><p class="notice">${esc(sp.delivery_notice)}</p></div></section>`;
+
+        const telHref = `${phoneTel(site)}`;
+        const contactHtml = `<section class="contact" id="contact"><div class="wrap"><div><span class="eyebrow">${esc(sp.contact_eyebrow)}</span><h2>${esc(sp.contact_title_1)}<br />${esc(sp.contact_title_2)}</h2></div><a class="cta" href="${telHref}">${esc(sp.contact_cta_label)} <span>↗</span></a></div></section>`;
+
+        document.getElementById("app").innerHTML = `
+          ${topline}
+          ${header}
+          <main>
+            <section class="hero"><div class="wrap"><div><span class="crumb">${esc(sp.hero_crumb)}</span><span class="eyebrow">${esc(sp.hero_eyebrow)}</span><h1>${esc(sp.hero_title_1)}<br />${esc(sp.hero_title_2)}</h1><p>${esc(sp.hero_subtitle)}</p><div class="hero-tags">${heroTags}</div></div><div class="signal-map" aria-label="EMC 测试信号流程示意"><div class="map-node one">${esc(sp.map1_label)}<small>${esc(sp.map1_desc)}</small></div><div class="map-node two">${esc(sp.map2_label)}<small>${esc(sp.map2_desc)}</small></div><div class="map-node three">${esc(sp.map3_label)}<small>${esc(sp.map3_desc)}</small></div></div></div></section>
+            <nav class="quick-nav" aria-label="页面内导航"><div class="wrap"><b>${esc(sp.quicknav_label)}</b>${quickHtml}</div></nav>
+            ${sectionHtml}
+            ${caseHtml}
+            ${industryHtml}
+            ${deliveryHtml}
+            ${contactHtml}
+          </main>
+          ${footer}
+          ${consultWidget(site)}
+        `;
+        bindConsult();
+      }
+      main().catch(e => {
+        document.getElementById("app").innerHTML =
+          `<div class="wrap" style="padding:120px 0;color:#e72f36">加载失败：${esc(e.message)}<br/>请确认 Directus 实例可访问且已开启 Public 只读权限。</div>`;
+        console.error(e);
+      });
+    </script>
+  </body>
+</html>
