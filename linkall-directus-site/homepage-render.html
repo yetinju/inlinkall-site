@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>LinkAll 凌茂电子｜首页</title>
+    <link rel="stylesheet" href="common.css" />
     <style>
       :root {
         --ink: #071a2f;
@@ -18,18 +19,7 @@
         --shadow: 0 18px 46px rgba(8, 31, 52, .11);
       }
 
-      * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; }
-      body {
-        margin: 0;
-        color: var(--ink);
-        background: var(--paper);
-        font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-      }
-      a { color: inherit; text-decoration: none; }
-      button { font: inherit; }
-      .wrap { width: min(1180px, calc(100% - 48px)); margin: auto; }
+      body { background: var(--paper); }
       .eyebrow {
         display: inline-flex;
         align-items: center;
@@ -162,27 +152,6 @@
       .contact .cta { flex: 0 0 auto; min-width: 168px; background: var(--red); border-color: var(--red); }
       .contact .cta:hover { background: #c8222a; }
 
-      footer { padding: 46px 0 23px; color: #a3b8c7; background: #061526; }
-      .footer-top { display: grid; grid-template-columns: 1.75fr repeat(3, 1fr); gap: 25px; padding-bottom: 41px; }
-      .footer-logo { display: inline-flex; align-items: center; padding: 11px 15px; background: #fff; border-radius: 12px; }
-      .footer-logo img { display: block; height: 40px; width: auto; max-width: 160px; object-fit: contain; }
-      .footer-brand p { max-width: 240px; margin: 16px 0 0; font-size: 12px; line-height: 1.7; }
-      .footer-group b { display: block; margin-bottom: 14px; color: white; font-size: 13px; }
-      .footer-group a { display: block; margin: 8px 0; font-size: 12px; }
-      .footer-bottom { display: flex; justify-content: space-between; gap: 18px; padding-top: 20px; border-top: 1px solid rgba(169, 199, 216, .15); font-size: 11px; }
-
-      /* 在线咨询浮动组件 */
-      .consult { position: fixed; right: 0; bottom: 0; z-index: 60; width: 196px; font-family: inherit; }
-      .consult-head { display: flex; align-items: center; justify-content: center; gap: 8px; height: 46px; color: #fff; background: var(--blue); font-size: 15px; font-weight: 700; cursor: pointer; user-select: none; box-shadow: 0 6px 20px rgba(8, 31, 52, .2); }
-      .consult-head svg { width: 19px; height: 19px; flex: 0 0 auto; }
-      .consult-caret { font-size: 11px; transition: transform .2s ease; }
-      .consult.collapsed .consult-caret { transform: rotate(180deg); }
-      .consult-body { background: #fff; border: 1px solid #cfe0ea; border-top: 0; box-shadow: -8px 12px 28px rgba(8, 31, 52, .14); }
-      .consult.collapsed .consult-body { display: none; }
-      .consult-item { display: block; padding: 12px 14px; color: #17364d; text-align: center; font-size: 13px; border-top: 1px solid #e7eff4; transition: background .18s ease, color .18s ease; }
-      .consult-item:first-child { border-top: 0; }
-      .consult-item:hover { color: #fff; background: var(--blue); }
-      @media (max-width: 680px) { .consult { width: 158px; } .consult-head { height: 42px; font-size: 13px; } .consult-item { padding: 11px 12px; font-size: 12px; } }
 
       @media (max-width: 980px) {
         .nav-links { display: none; }

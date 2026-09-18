@@ -5,14 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="凌茂电子产品中心概念设计" />
     <title>产品中心｜LinkAll 凌茂电子</title>
+    <link rel="stylesheet" href="common.css" />
     <style>
       :root { --ink:#071a2f; --navy:#0a2947; --blue:#1268b3; --cyan:#36c3e6; --red:#e72f36; --pale:#eef4f7; --line:#d9e4ea; --muted:#617d92; }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      body { margin:0; background:#f8fafb; color:var(--ink); font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
-      a { color:inherit; text-decoration:none; }
-      button,input { font:inherit; }
-      .wrap { width:min(1180px,calc(100% - 48px)); margin:auto; }
+      body { background:#f8fafb; }
       .topline { min-height:34px; color:#bdd0dc; background:var(--ink); font-size:12px; }
       .topline .wrap { min-height:34px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
       .topline strong { color:#fff; font-weight:600; }
@@ -64,25 +60,6 @@
       .request .cta { flex:0 0 auto; background:var(--red); border-color:var(--red); }
       .request .cta:hover { background:#c5232b; }
       .empty { grid-column:1/-1; padding:43px; color:#6c8799; text-align:center; border:1px dashed #b7cbd6; background:#fff; }
-      footer { padding:46px 0 23px; color:#a3b8c7; background:#061526; }
-      .footer-top { display:grid; grid-template-columns:1.75fr repeat(3,1fr); gap:25px; padding-bottom:41px; }
-      .footer-logo { display:inline-flex; align-items:center; padding:11px 15px; background:#fff; border-radius:12px; }
-      .footer-logo img { display:block; height:40px; width:auto; max-width:160px; object-fit:contain; }
-      .footer-brand p { max-width:240px; margin:16px 0 0; font-size:12px; line-height:1.7; }
-      .footer-group b { display:block; margin-bottom:14px; color:#fff; font-size:13px; }
-      .footer-group a { display:block; margin:8px 0; font-size:12px; }
-      .footer-bottom { display:flex; justify-content:space-between; gap:18px; padding-top:20px; border-top:1px solid rgba(169,199,216,.15); font-size:11px; }
-      .consult { position:fixed; right:0; bottom:0; z-index:60; width:196px; font-family:inherit; }
-      .consult-head { display:flex; align-items:center; justify-content:center; gap:8px; height:46px; color:#fff; background:var(--blue); font-size:15px; font-weight:700; cursor:pointer; user-select:none; box-shadow:0 6px 20px rgba(8,31,52,.2); }
-      .consult-head svg { width:19px; height:19px; flex:0 0 auto; }
-      .consult-caret { font-size:11px; transition:transform .2s ease; }
-      .consult.collapsed .consult-caret { transform:rotate(180deg); }
-      .consult-body { background:#fff; border:1px solid #cfe0ea; border-top:0; box-shadow:-8px 12px 28px rgba(8,31,52,.14); }
-      .consult.collapsed .consult-body { display:none; }
-      .consult-item { display:block; padding:12px 14px; color:#17364d; text-align:center; font-size:13px; border-top:1px solid #e7eff4; transition:background .18s ease,color .18s ease; }
-      .consult-item:first-child { border-top:0; }
-      .consult-item:hover { color:#fff; background:var(--blue); }
-      @media (max-width:680px) { .consult { width:158px; } .consult-head { height:42px; font-size:13px; } .consult-item { padding:11px 12px; font-size:12px; } }
       @media (max-width:880px) { .nav-links{display:none}.grid{grid-template-columns:repeat(2,1fr)}.tools{grid-template-columns:1fr}.filters button{min-height:41px}.catalog-top{display:block}.catalog-top p{margin-top:13px}.footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:span 2} }
       @media (max-width:580px) { .wrap{width:min(100% - 32px,1180px)}.topline .side{display:none}.nav{min-height:66px}.brand{width:132px}.brand img{height:40px}.nav .cta{min-height:38px;padding:0 13px;font-size:12px}.hero .wrap{min-height:274px;padding:46px 0}.eyebrow{margin-top:25px}.grid{grid-template-columns:1fr}.catalog{padding:53px 0 72px}.request{display:block;padding:26px}.request .cta{margin-top:20px}.footer-top{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{display:block;line-height:1.8} }
     </style>

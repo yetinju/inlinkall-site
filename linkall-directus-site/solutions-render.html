@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="凌茂电子 EMC 系统集成解决方案，包括 PCB 电子板级抗扰度测试与电磁现场骚扰采集、分析及回放。" />
     <title>EMC 系统集成解决方案｜LinkAll 凌茂电子</title>
+    <link rel="stylesheet" href="common.css" />
     <style>
       :root { --ink:#071a2f; --navy:#0a2947; --blue:#1268b3; --cyan:#36c3e6; --red:#e72f36; --pale:#eef4f7; --line:#d9e4ea; --muted:#617d92; --white:#fff; }
-      * { box-sizing:border-box; }
-      html { scroll-behavior:smooth; }
-      body { margin:0; color:var(--ink); background:#f8fafb; font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif; -webkit-font-smoothing:antialiased; }
-      a { color:inherit; text-decoration:none; }
-      .wrap { width:min(1180px,calc(100% - 48px)); margin:auto; }
+      body { background:#f8fafb; }
       .topline { min-height:34px; color:#bdd0dc; background:var(--ink); font-size:12px; }
       .topline .wrap { min-height:34px; display:flex; align-items:center; justify-content:space-between; gap:18px; }
       .topline strong { color:#fff; font-weight:600; }
@@ -121,25 +118,6 @@
       .contact h2 { max-width:690px; margin:15px 0 0; font-size:clamp(30px,4vw,49px); line-height:1.16; letter-spacing:-.06em; }
       .contact .cta { flex:0 0 auto; min-width:166px; border-color:var(--red); background:var(--red); }
       .contact .cta:hover { background:#c5232b; }
-      footer { padding:46px 0 23px; color:#a3b8c7; background:#061526; }
-      .footer-top { display:grid; grid-template-columns:1.75fr repeat(3,1fr); gap:25px; padding-bottom:41px; }
-      .footer-logo { display:inline-flex; align-items:center; padding:11px 15px; background:#fff; border-radius:12px; }
-      .footer-logo img { display:block; height:40px; width:auto; max-width:160px; object-fit:contain; }
-      .footer-brand p { max-width:240px; margin:16px 0 0; font-size:12px; line-height:1.7; }
-      .footer-group b { display:block; margin-bottom:14px; color:#fff; font-size:13px; }
-      .footer-group a { display:block; margin:8px 0; font-size:12px; }
-      .footer-bottom { display:flex; justify-content:space-between; gap:18px; padding-top:20px; border-top:1px solid rgba(169,199,216,.15); font-size:11px; }
-      .consult { position:fixed; right:0; bottom:0; z-index:60; width:196px; font-family:inherit; }
-      .consult-head { display:flex; align-items:center; justify-content:center; gap:8px; height:46px; color:#fff; background:var(--blue); font-size:15px; font-weight:700; cursor:pointer; user-select:none; box-shadow:0 6px 20px rgba(8,31,52,.2); }
-      .consult-head svg { width:19px; height:19px; flex:0 0 auto; }
-      .consult-caret { font-size:11px; transition:transform .2s ease; }
-      .consult.collapsed .consult-caret { transform:rotate(180deg); }
-      .consult-body { background:#fff; border:1px solid #cfe0ea; border-top:0; box-shadow:-8px 12px 28px rgba(8,31,52,.14); }
-      .consult.collapsed .consult-body { display:none; }
-      .consult-item { display:block; padding:12px 14px; color:#17364d; text-align:center; font-size:13px; border-top:1px solid #e7eff4; transition:background .18s ease,color .18s ease; }
-      .consult-item:first-child { border-top:0; }
-      .consult-item:hover { color:#fff; background:var(--blue); }
-      @media (max-width:680px) { .consult { width:158px; } .consult-head { height:42px; font-size:13px; } .consult-item { padding:11px 12px; font-size:12px; } }
       @media (max-width:920px) { .nav-links { display:none; } .hero .wrap,.solution-layout,.capability-grid,.case-layout { grid-template-columns:1fr; } .signal-map { min-height:240px; } .modules { grid-template-columns:repeat(2,1fr); } .delivery-grid { grid-template-columns:repeat(2,1fr); row-gap:34px; } .footer-top { grid-template-columns:1fr 1fr; } .footer-brand { grid-column:span 2; } }
       @media (max-width:620px) { .wrap { width:min(100% - 32px,1180px); } .topline .side { display:none; } .nav { min-height:66px; } .brand { width:132px; } .brand img { height:40px; } .nav .cta { min-height:38px; padding:0 13px; font-size:12px; } .hero .wrap { min-height:auto; padding:50px 0; } h1 { font-size:43px; } .hero p { font-size:14px; } .signal-map { min-height:212px; } .quick-nav .wrap { min-height:64px; gap:18px; } section { padding:68px 0; } .section-head { display:block; } .section-head p { margin-top:17px; } .process,.modules,.industry-grid,.delivery-grid { grid-template-columns:1fr; } .process-step { min-height:138px; } .industry { padding:67px 0; } .contact .wrap { align-items:flex-start; flex-direction:column; } .footer-top { grid-template-columns:1fr; } .footer-brand { grid-column:auto; } .footer-bottom { display:block; line-height:1.8; } }
     </style>
